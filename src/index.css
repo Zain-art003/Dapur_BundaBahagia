@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dapur Bunda Bahagia Restaurant System Design System */
+@layer base {
+  :root {
+    /* Restaurant themed color palette */
+    --background: 38 15% 97%;
+    --foreground: 25 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Primary: Warm amber/orange for restaurant warmth */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 25 100% 65%;
+
+    /* Secondary: Soft cream for backgrounds */
+    --secondary: 38 25% 92%;
+    --secondary-foreground: 25 25% 15%;
+
+    /* Muted: Light neutral tones */
+    --muted: 38 15% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent: Fresh green for highlights */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success: Green variations */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Amber variations */
+    --warning: 43 96% 56%;
+    --warning-foreground: 25 25% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 38 20% 85%;
+    --input: 38 20% 85%;
+    --ring: 25 95% 53%;
+
+    /* Enhanced radius system */
+    --radius: 0.75rem;
+
+    /* Beautiful gradients for restaurant theme */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%), hsl(43 96% 56%));
+    --gradient-fresh: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 71% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(38 25% 98%) 100%);
+
+    /* Shadows with restaurant warmth */
+    --shadow-warm: 0 10px 30px -10px hsl(25 95% 53% / 0.3);
+    --shadow-fresh: 0 10px 30px -10px hsl(142 76% 36% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(25 25% 15% / 0.1);
+    --shadow-elegant: 0 20px 40px -12px hsl(25 25% 15% / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with warm restaurant ambiance */
+    --background: 25 25% 8%;
+    --foreground: 38 15% 92%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 38 15% 92%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 38 15% 92%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 25 25% 8%;
+    --primary-glow: 25 100% 65%;
+
+    --secondary: 25 25% 15%;
+    --secondary-foreground: 38 15% 92%;
+
+    --muted: 25 25% 15%;
+    --muted-foreground: 38 15% 65%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 43 96% 56%;
+    --warning-foreground: 25 25% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 25% 20%;
+    --input: 25 25% 20%;
+    --ring: 25 95% 53%;
+
+    --sidebar-background: 25 25% 8%;
+    --sidebar-foreground: 38 15% 92%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 25 25% 8%;
+    --sidebar-accent: 25 25% 15%;
+    --sidebar-accent-foreground: 38 15% 92%;
+    --sidebar-border: 25 25% 20%;
+    --sidebar-ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-medium;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-fresh {
+    background: var(--gradient-fresh);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-fresh {
+    box-shadow: var(--shadow-fresh);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
